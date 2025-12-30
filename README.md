@@ -14,10 +14,10 @@ This repository focuses on the development and simulation of an intelligent diff
 * **Intelligent Parameters:** Developed custom **C++ nodes** with parameter callbacks to allow for real-time tuning of robot behavior without recompilation.
 
 ## 🛠️ Tech Stack & Frameworks
-* [cite_start]**Middleware:** ROS 2 (Jazzy Jalisco)[cite: 80].
-* [cite_start]**Simulation:** Gazebo (Physics-based simulation)[cite: 65, 80].
-* [cite_start]**Languages:** C++ (Core Logic/Drivers), Python (Launch/Navigation scripting)[cite: 79].
-* [cite_start]**Tools:** RViz2, Git, SLAM Toolbox[cite: 80, 82].
+* **Middleware:** ROS 2 (Jazzy Jalisco)[cite: 80].
+* **Simulation:** Gazebo (Physics-based simulation)[cite: 65, 80].
+* **Languages:** C++ (Core Logic/Drivers), Python (Launch/Navigation scripting)[cite: 79].
+* **Tools:** RViz2, Git, SLAM Toolbox[cite: 80, 82].
 
 ## 📂 Repository Structure
 * `/urdf`: Robot description files (XML/Xacro) including visual, collision, and inertial properties.
@@ -26,7 +26,6 @@ This repository focuses on the development and simulation of an intelligent diff
 * `/meshes`: Custom 3D STL models for the robot chassis and sensors.
 
 ## 📖 Background & Motivation
-My research journey, supervised by **Dr. [cite_start]Jibril Abdullahi Bala**, is driven by a desire to automate emergency response in regions with poor infrastructure[cite: 16, 17, 18]. [cite_start]This project validates the algorithms I am developing for my upcoming publication: *"An Optimized Path Planning Technique for Collision-Free Emergency Response using Autonomous Vehicles"*[cite: 77].
+My research project is driven by a desire to automate emergency response in regions with poor infrastructure. This project validates the algorithms being developed for the paper *"An Optimized Path Planning Technique for Collision-Free Emergency Response using Autonomous Vehicles"*.
 
 ---
-*Developed by **Obed Honour Eje** | [cite_start]Undergraduate Researcher at FUTMinna [cite: 35, 38]*
