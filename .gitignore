@@ -3,3 +3,5 @@ install/
 log/
 .vscode/
 __pycache__/
+bumper_bot_py_examples/
+
