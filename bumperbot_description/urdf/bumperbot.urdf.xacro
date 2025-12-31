@@ -87,7 +87,7 @@
 
 <!-- <link name = "can_link">
     <visual>
-        <origin rpy = "1.57 0 0" xyz = "-0.03 0.03 0"/>
+        <origin rpy = "1.57 0 0" xyz = "-0.035 0.035 0"/>
         <geometry>
             <mesh filename = "package://bumperbot_description/meshes/can.STL"/>
         </geometry>
