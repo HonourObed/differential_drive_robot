@@ -30,7 +30,7 @@ void SimpleController::velCallback(const geometry_msgs::msg::TwistStamped &msg)
     Eigen::Vector2d wheel_speed = speed_conversion_.inverse() * robot_speed;
     std_msgs::msg::Float64MultiArray wheel_speed_msg;
     wheel_speed_msg.data.push_back(wheel_speed.coeff(1));
-    wheel_speed_msg.data.push_back(wheel_speed.coeff(2));
+    wheel_speed_msg.data.push_back(wheel_speed.coeff(0));
 
 
     wheel_cmd_pub_ -> publish(wheel_speed_msg);
