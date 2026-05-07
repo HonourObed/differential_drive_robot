@@ -15,6 +15,7 @@ def generate_launch_description():
         "use_simple_controller",
         default_value = "True"
     )
+
     
     wheel_radius_arg = DeclareLaunchArgument(
         "wheel_radius",
@@ -31,7 +32,7 @@ def generate_launch_description():
     wheel_radius = LaunchConfiguration("wheel_radius")
     wheel_separation = LaunchConfiguration("wheel_separation")
     use_simple_controller = LaunchConfiguration("use_simple_controller")
-
+    use_python = LaunchConfiguration("use_python")
 
     joint_state_broadcaster_spawner = Node(
         package = "controller_manager",
@@ -57,33 +58,38 @@ def generate_launch_description():
     simple_controller = GroupAction(
         condition = IfCondition(use_simple_controller),
         actions = [
-            Node(
-                package = "controller_manager",
-                executable = "spawner",
-                arguments = [
-                    "simple_velocity_controller",
-                    "--controller-manager",
-                    "/controller_manager"
-                ]
-        ),
+                Node(
+                    package = "controller_manager",
+                    executable = "spawner",
+                    arguments = [
+                        "simple_velocity_controller",
+                        "--controller-manager",
+                        "/controller_manager"
+                    ]
+                ),
 
-        Node(
-                package = "bumperbot_controller",
-                executable = "simple_controller",
-                parameters = [{"wheel_radius": wheel_radius,
-                                "wheel_separation": wheel_separation,
-                                "use_sim_time": use_sim_time}]
-            )
-        ]
+
+                Node(
+                    package = "bumperbot_controller",
+                    executable = "simple_controller",
+                    parameters = [{"wheel_radius": wheel_radius,
+                                    "wheel_separation": wheel_separation,
+                                    "use_sim_time": use_sim_time}]
+                )
+
+
+                ]
     )
 
     
     return LaunchDescription([
-        joint_state_broadcaster_spawner,
-        simple_controller,
+        use_sim_time_arg,
+        use_simple_controller_arg,
         wheel_radius_arg,
         wheel_separation_arg,
-        use_simple_controller_arg,
+
+        joint_state_broadcaster_spawner,
+        simple_controller,
         wheel_controller_spawner,
-        use_sim_time_arg
+        
             ])
